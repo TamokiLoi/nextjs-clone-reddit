@@ -17,6 +17,8 @@ const Feed = ({ topic }: Props) => {
         });
     const posts: Post[] = !topic ? data?.getPostList : data?.getPostListByTopic;
 
+    console.log('topic', topic, 'posts', posts);
+
     if (!posts) return <Loading />;
 
     return (
