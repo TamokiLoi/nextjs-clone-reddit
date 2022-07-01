@@ -61,6 +61,7 @@ const Post = ({ post }: Props) => {
             const { data: { insertVote: newVote } } = await addVote({
                 variables: {
                     post_id: post.id,
+                    // eslint-disable-next-line react-hooks/exhaustive-deps
                     username: session?.user?.name,
                     upvote: isUpvote,
                 }
@@ -118,6 +119,7 @@ const Post = ({ post }: Props) => {
                     </div>
 
                     {/* Image */}
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
                     {post.image && <img className="w-full" src={post.image} alt={post.title} />}
 
                     {/* Footer */}

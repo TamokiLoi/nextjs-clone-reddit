@@ -9,7 +9,9 @@ type Props = {
 
 const Feed = ({ topic }: Props) => {
     const { data, error } = !topic ?
+        // eslint-disable-next-line react-hooks/rules-of-hooks
         useQuery(GET_ALL_POSTS) :
+        // eslint-disable-next-line react-hooks/rules-of-hooks
         useQuery(GET_ALL_POSTS_BY_TOPIC, {
             variables: { topic: topic }
         });
